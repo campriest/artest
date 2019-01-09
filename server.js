@@ -2,6 +2,7 @@ const https   = require('https');
 const express = require('express');
 const fs      = require('fs');
 const app     = express();
+const port    = process.env.port || 3000;
 
 
 var options = {
@@ -15,6 +16,6 @@ app.get('/', (req, res) =>res.sendFile('index.html'));
 
 
 
-https.createServer(options, app).listen(3000, () => console.log("server is on"));
+https.createServer(options, app).listen(port, () => console.log("server is on"));
 
 //app.listen(3000, () =>console.log("server is on"));
